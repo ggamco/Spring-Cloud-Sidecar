@@ -1,10 +1,11 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
       name: sidecar-node
 
 sidecar:
-  home-page-uri: http://node-app-lab-dekra.e4ff.pro-eu-west-1.openshiftapps.com/
-  health-uri: http://node-app-lab-dekra.e4ff.pro-eu-west-1.openshiftapps.com/health
+  port: 80
+  home-page-uri: http://node-app-lab-dekra.e4ff.pro-eu-west-1.openshiftapps.com:${sidecar.port}/
+  health-uri: http://node-app-lab-dekra.e4ff.pro-eu-west-1.openshiftapps.com:${sidecar.port}/health
